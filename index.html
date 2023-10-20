@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Gerador de números</title>
+</head>
+
+<body>
+  <main class="main-container">
+    <div class="container-itens">
+      <h1>Gerador de números</h1>
+      <p class="gerador">0</p>
+      <button>Gerar</button>
+    </div>
+  </main>
+  <script>
+    const button = document.querySelector('button')
+    button.addEventListener('click', gerar)
+
+    function gerar() {
+      const p = document.querySelector('p')
+      p.innerHTML = Math.floor(Math.random() * (4000 - 1000) + 1000)
+    }
+  </script>
+</body>
+
+</html>
