@@ -16,25 +16,38 @@
       <button class="historico">Gerar</button>
     </div>
     <div class="history-container">
-      <h1>Historico</h1>
-      <div id="valores"></div>
+      <h1 class="titulo-historico">Historico</h1>
+      <div id="valores">
+        <p>0</p>
+        <p>0</p>
+        <p>0</p>
+        <p>0</p>
+        <p>0</p>
+      </div>
     </div>
   </main>
   <script>
     const button = document.querySelector('button')
     button.addEventListener('click', gerar)
-
+    let historico = [0, 0, 0, 0, 0]
+    let count = 0
     function gerar() {
       const p = document.querySelector('p')
       const numero = Math.floor(Math.random() * (4000 - 1000) + 1000)
       p.innerHTML = numero
-      historico(numero)
+      history(numero)
     }
-    function historico(numero) {
-      let p = document.createElement('p')
-      p.innerHTML = numero
-      document.getElementById('valores').appendChild(p)
+    function history(numeros) {
+      let totalP = document.querySelectorAll('#valores p')
+      historico.unshift(numeros)
+
+      for (let i = 0; i < totalP.length; i++) {
+        const elemento = historico[i];
+        totalP[i].innerHTML = elemento
+      }
+
     }
+
   </script>
 </body>
 
