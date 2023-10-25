@@ -40,12 +40,10 @@
     function history(numeros) {
       let totalP = document.querySelectorAll('#valores p')
       historico.unshift(numeros)
-
       for (let i = 0; i < totalP.length; i++) {
         const elemento = historico[i];
         totalP[i].innerHTML = elemento
       }
-
     }
 
   </script>
